@@ -59,6 +59,7 @@
     put = push origin HEAD
     tc = diff --cached
     rmdf = !git rm $(git ls-files --deleted)
+    g = git 
     tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
 
 [core]

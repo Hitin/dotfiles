@@ -23,12 +23,10 @@ source ~/.bash/mac.sh
 source ~/.bash/completion.sh
 source ~/.bash/project-mgmt.sh
 source ~/.bash/non-root.sh
+source ~/.bash/git-completion.sh
+source ~/.bash/git-flow-completion.sh
 
 test -f ~/.bashrc.local && source ~/.bashrc.local
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
