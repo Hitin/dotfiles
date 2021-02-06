@@ -98,7 +98,7 @@ test -n "$INTERACTIVE" && {
     PS1="$PS1\[$(_xcb 35)\]\w\[$(_xcr)\]"
 
     # Show code repo (if present) in color, then start new line
-    PS1="$PS1\[\$(_scm_color)\]\$(_scm_info)\$(parse_git_dirty)\[$(_xcr)\]\n"
+    PS1="$PS1\[\$(_scm_color)\]\$(_scm_info)\[$(_xcr)\]\n"
 
     # Show {user}@{host}, magenta
     PS1="$PS1\[$(_xcu 32)\]\u\[$(_xcr)\]"
