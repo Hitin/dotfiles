@@ -68,6 +68,7 @@ for _this in \
     /opt/openldap/{bin,sbin} \
     /usr/sfw/bin \
     /usr/X11R6/bin \
+    /snap/bin \
     $(_rsort "/usr/local/Cellar/python3/*/bin") \
     $(_rsort "/usr/local/Cellar/python/*/bin") \
     ~/tools

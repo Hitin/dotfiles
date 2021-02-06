@@ -105,4 +105,4 @@ alias reload="source ~/.bashrc"
 
 # commands starting with % for pasting from web
 alias %=" "
-
+alias g="git"

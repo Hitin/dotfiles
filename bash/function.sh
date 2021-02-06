@@ -87,7 +87,7 @@ _scm_color() {
     # If we're still here, figure out the color we want to use
     _git_status="$(git status 2>/dev/null)"
 
-    if [[ $_git_status =~ "working directory clean" ]]; then
+    if [[ $_git_status =~ "working tree clean" ]]; then
         _xc 36
     elif [[ $_git_status =~ "Changes to be committed" ]]; then
         _xc 33
@@ -134,11 +134,10 @@ _scm_info() {
     fi
 
     # Get the name of the branch.
-    _pattern="^# On branch ([^${IFS}]*)"
+    _pattern="^On branch ([^${IFS}]*)"
     if [[ $_git_status =~ $_pattern ]]; then
         _branch=${BASH_REMATCH[1]}
     fi
-
     # Output the prompt.
     echo -n " ($_branch)${_remote}"
 

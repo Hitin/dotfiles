@@ -37,7 +37,7 @@
     lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lgp = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
     g = git
-    gst = g st
+    gst=g st
     gco = g co
     gci = g ci
     unstage = reset HEAD
@@ -67,8 +67,10 @@
 
 [core]
     pager = less
-    editor = vim
+	editor = subl -n -w
     quotepath = false
     excludesfile = ~/.gitignore
+	autocrlf = input
+	safecrlf = true
 
 
