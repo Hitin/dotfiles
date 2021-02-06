@@ -128,7 +128,7 @@ _scm_info() {
             _remote="↓"
         fi
     fi
-    _pattern="# Your branch and (.*) have diverged"
+    _pattern="Your branch and (.*) have diverged"
     if [[ $_git_status =~ $_pattern ]]; then
         remote="↕"
     fi
