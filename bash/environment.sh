@@ -70,6 +70,7 @@ for _this in \
     /usr/X11R6/bin \
     $(_rsort "/usr/local/Cellar/python3/*/bin") \
     $(_rsort "/usr/local/Cellar/python/*/bin") \
+    /snap/bin \
     ~/tools
 do
     test -d $_this && {

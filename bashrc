@@ -48,9 +48,9 @@ if [ -f /usr/local/go ]; then
     export PATH=/usr/local/go/bin:$PATH
 fi
 
-if [ -f `brew --prefix`/etc/bash-completion ]; then
- . `brew --prefix`/etc/bash-completion
-fi
+# if [ -f `brew --prefix`/etc/bash-completion ]; then
+#  . `brew --prefix`/etc/bash-completion
+# fi
 
 if [ -f /opt/local/etc/bash_completion ]; then
  /opt/local/etc/bash_completion

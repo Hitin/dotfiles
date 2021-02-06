@@ -87,7 +87,7 @@ _scm_color() {
     # If we're still here, figure out the color we want to use
     _git_status="$(git status 2>/dev/null)"
 
-    if [[ $_git_status =~ "working directory clean" ]]; then
+    if [[ $_git_status =~ "working tree clean" ]]; then
         _xc 36
     elif [[ $_git_status =~ "Changes to be committed" ]]; then
         _xc 33
@@ -120,7 +120,7 @@ _scm_info() {
     _git_status="$(git status 2>/dev/null)"
 
     # Set arrow icon based on status against remote.
-    _pattern="# Your branch is (.*) of"
+    _pattern="Your branch is (.*) of"
     if [[ $_git_status =~ $_pattern ]]; then
         if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
             _remote="↑"
@@ -134,7 +134,7 @@ _scm_info() {
     fi
 
     # Get the name of the branch.
-    _pattern="^# On branch ([^${IFS}]*)"
+    _pattern="^On branch ([^${IFS}]*)"
     if [[ $_git_status =~ $_pattern ]]; then
         _branch=${BASH_REMATCH[1]}
     fi

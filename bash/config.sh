@@ -92,25 +92,25 @@ test -n "$INTERACTIVE" && {
     PS1="\[$(_xcr)\]\n"
 
     # Check for new mail (red envelope icon)
-    # PS1="$PS1\[$(_xc 31)\]\$(_check_for_mail)\[$(_xcr)\]"
+    PS1="$PS1\[$(_xc 31)\]\$(_check_for_mail)\[$(_xcr)\]"
 
     # Show current directory (violet)
-    # PS1="$PS1\[$(_xcb 35)\]\w\[$(_xcr)\]"
+    PS1="$PS1\[$(_xcb 35)\]\w\[$(_xcr)\]"
 
     # Show code repo (if present) in color, then start new line
-    # PS1="$PS1\[\$(_scm_color)\]\$(_scm_info)\[$(_xcr)\]\n"
+    PS1="$PS1\[\$(_scm_color)\]\$(_scm_info)\$(parse_git_dirty)\[$(_xcr)\]\n"
 
     # Show {user}@{host}, magenta
-    # PS1="$PS1\[$(_xcu 35)\]\u\[$(_xcr)\]"
+    PS1="$PS1\[$(_xcu 32)\]\u\[$(_xcr)\]"
 
     # Show the value of $? (in inverse red if it's non-zero)
-    # PS1="$PS1{\[\$(_xc_retval)\]\$?\[$(_xcr)\]}"
+    PS1="$PS1{\[\$(_xc_retval)\]\$?\[$(_xcr)\]}"
 
     # Show the current number of jobs (in red if > 0), then a prompt
-    # PS1="$PS1[\[\$(_xc_jobs)\]\j\[$(_xcr)\]]\\$ "
+    PS1="$PS1[\[\$(_xc_jobs)\]\j\[$(_xcr)\]]\\$ "
 
-  export PS1='\u:\[\033[$(_xcu 35)\]\w\[\033[0;36m\]$(parse_git_branch)\[\e[0m\]\n$ '
-    # export PS1
+  # export PS1='\[$(_xc 32)\]\u:\[\033[$(_xcu 34)\]\w\[\033[0;36m\]$(parse_git_branch)\[\e[0m\]\n$ '
+    export PS1
 
     # A decent tcsh prompt:
     #set prompt = "%n@%M:%c{%?}%# "
@@ -121,6 +121,7 @@ test -n "$INTERACTIVE" && {
     set -o emacs
 
     # notify of bg job completion immediately
-    #set -o notify
-
+    set -o notify
+    
+    set_tab_title $HOST
 }
